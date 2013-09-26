@@ -1,4 +1,6 @@
-﻿using System;
+﻿// https://gist.github.com/resnyanskiy/6696035
+
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;

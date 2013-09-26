@@ -15,26 +15,43 @@
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
-      <RowDefinition />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
     </Grid.RowDefinitions>
 
     <ComboBox x:Name="SelectedItem"
               ItemsSource="{Binding Items}"
-              SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" />
+              SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}"
+              />
 
     <Label Grid.Column="0" Grid.Row="1"
            HorizontalContentAlignment="Center"
            Visibility="{Binding ElementName=SelectedItem, Path=SelectedIndex, Converter={vc:EqualityToVisibilityConverter}, ConverterParameter='-1'}"
-           Content="Select item in ComboBox above" />
+           Content="Select item in ComboBox above"
+           />
 
     <DatePicker Grid.Column="1" Margin="3 0 3 0"
                 x:Name="SelectedDate"
                 IsEnabled="{Binding ElementName=SelectedItem, Path=SelectedItem, Converter={vc:HasPropertyConverter}, ConverterParameter='Time'}"
-                SelectedDate="{Binding ElementName=SelectedItem, Path=SelectedItem.Time, Mode=TwoWay}" />
+                SelectedDate="{Binding ElementName=SelectedItem, Path=SelectedItem.Time, Mode=TwoWay}"
+                />
 
     <Label Grid.Column="1" Grid.Row="1"
            HorizontalContentAlignment="Center"
            Visibility="{Binding ElementName=SelectedDate, Path=IsEnabled, Converter={vc:BooleanToVisibilityConverter}}"
-           Content="Select date in Date Picker above" />
+           Content="Select date in Date Picker above"
+           />
+
+    <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Vertical">
+      <TextBox Margin="3"
+               x:Name="SelectedDateFormated"
+               Text="{Binding ElementName=SelectedDate, Path=SelectedDate, Mode=TwoWay, StringFormat={}{0:s}}"
+               />
+
+      <Label HorizontalContentAlignment="Center"
+             Visibility="{Binding ElementName=SelectedDateFormated, Path=Text.Length, Converter={vc:InequalityToVisibilityConverter}, ConverterParameter='0'}"
+             Content="Change date and hit Tab (change focus)"
+             />
+    </StackPanel>
   </Grid>
 </Window>

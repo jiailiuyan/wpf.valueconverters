@@ -5,11 +5,8 @@ using System.Windows.Data;
 
 namespace Community.Windows.ValueConverters
 {
-  /// <summary>
-	/// Value converter that translates true to <see cref="Visibility.Visible"/> and false to <see cref="Visibility.Collapsed"/>
-	/// </summary>
   [ValueConversion(typeof(bool), typeof(Visibility))]
-  public class BooleanToVisibilityConverter : ConverterBase<BooleanToVisibilityConverter>
+  public class BooleanToVisibilityConverter : ConverterBase
   {
     public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

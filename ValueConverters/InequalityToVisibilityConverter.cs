@@ -6,7 +6,7 @@ using System.Windows.Data;
 namespace Community.Windows.ValueConverters
 {
   [ValueConversion(typeof(object), typeof(Visibility), ParameterType = typeof(string))]
-  public class InequalityToVisibilityConverter : ConverterBase<InequalityToVisibilityConverter>
+  public class InequalityToVisibilityConverter : ConverterBase
   {
     public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

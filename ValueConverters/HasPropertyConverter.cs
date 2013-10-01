@@ -4,7 +4,7 @@ using System.Windows.Data;
 namespace Community.Windows.ValueConverters
 {
   [ValueConversion(typeof(object), typeof(bool), ParameterType = typeof(string))]
-  public class HasPropertyConverter : ConverterBase<HasPropertyConverter>
+  public class HasPropertyConverter : ConverterBase
   {
     public override object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
     {

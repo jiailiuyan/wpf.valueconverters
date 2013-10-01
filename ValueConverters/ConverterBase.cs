@@ -4,7 +4,8 @@ using System.Windows.Markup;
 
 namespace Community.Windows.ValueConverters
 {
-  public abstract class ConverterBase<T> : MarkupExtension, IValueConverter where T : class, new()
+  [MarkupExtensionReturnType(typeof(IValueConverter))]
+  public abstract class ConverterBase : MarkupExtension, IValueConverter
   {
     public abstract object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture);
 

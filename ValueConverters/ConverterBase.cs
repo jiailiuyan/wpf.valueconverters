@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Markup;
 
@@ -7,16 +8,40 @@ namespace Community.Windows.ValueConverters
   [MarkupExtensionReturnType(typeof(IValueConverter))]
   public abstract class ConverterBase : MarkupExtension, IValueConverter
   {
-    public abstract object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture);
+    public override object ProvideValue(IServiceProvider serviceProvider)
+    {
+      return this;
+    }
 
-    public virtual object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+    protected abstract object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture);
+
+    protected virtual object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
     {
       throw new NotImplementedException();
     }
 
-    public override object ProvideValue(IServiceProvider serviceProvider)
+    object IValueConverter.Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
     {
-      return this;
+      try
+      {
+        return Convert(value, targetType, parameter, culture);
+      }
+      catch
+      {
+        return DependencyProperty.UnsetValue;
+      }
+    }
+
+    object IValueConverter.ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+    {
+      try
+      {
+        return ConvertBack(value, targetType, parameter, culture);
+      }
+      catch
+      {
+        return DependencyProperty.UnsetValue;
+      }
     }
   }
 }

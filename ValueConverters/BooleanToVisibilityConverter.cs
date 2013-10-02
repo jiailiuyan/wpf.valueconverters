@@ -10,13 +10,13 @@ namespace Community.Windows.ValueConverters
   {
     public bool Invert { get; set; }
 
-    public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    protected override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
       var flag = (value is bool && (bool)value);
       return (flag ^ Invert) ? Visibility.Visible : Visibility.Collapsed;
     }
 
-    public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    protected override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
     {
       var result = value is Visibility && (Visibility)value == Visibility.Visible;
       return result ^ Invert;

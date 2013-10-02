@@ -10,7 +10,7 @@ namespace Community.Windows.ValueConverters
   {
     public bool Invert { get; set; }
 
-    public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    protected override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
       var stringToCompare = (string)parameter;
       if(value != null && !string.IsNullOrEmpty(stringToCompare))

@@ -8,8 +8,8 @@ This project is a collection of useful '[WPF Value Converters](http://wpftutoria
                          Converter={converters:DateTimeToString Calendar='Gregorian', Format ='Today is {0}'}}"/>
 ```
 
-NuGet package - http://www.nuget.org/packages/Community.Windows.ValueConverters/
-Documentation - http://github.com/resnyanskiy/wpf.valueconverters/wiki/
+* NuGet package - http://www.nuget.org/packages/Community.Windows.ValueConverters/
+* Documentation - http://github.com/resnyanskiy/wpf.valueconverters/wiki/
 
 There is several open source projects, containing WPF Value Converters. So why I created another one? Table below gives the answer.
 <table>

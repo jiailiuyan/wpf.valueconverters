@@ -39,7 +39,6 @@
   <ItemGroup>
     <Compile Include="BooleanToVisibilityConverter.cs" />
     <Compile Include="ConverterBase.cs" />
-    <Compile Include="InequalityToVisibilityConverter.cs" />
     <Compile Include="EqualityToVisibilityConverter.cs" />
     <Compile Include="HasPropertyConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Community.Windows.ValueConverters</id>
-        <version>0.1.0</version>
+        <version>0.2.0</version>
         <title>WPF ValueConverters</title>
         <authors>.NET Community</authors>
         <owners>resnyanskiy</owners>
@@ -10,6 +10,7 @@
         <projectUrl>https://github.com/resnyanskiy/wpf.valueconverters</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>System.Windows.Data.IValueConverter implementations</description>
+        <releaseNotes>Added 'Invert' parameter to some converters. InequalityToVisibilityConverter has been removed.</releaseNotes>
     </metadata>
     <files />
 </package>

@@ -49,7 +49,7 @@
                />
 
       <Label HorizontalContentAlignment="Center"
-             Visibility="{Binding ElementName=SelectedDateFormated, Path=Text.Length, Converter={vc:InequalityToVisibilityConverter}, ConverterParameter='0'}"
+             Visibility="{Binding ElementName=SelectedDateFormated, Path=Text.Length, Converter={vc:EqualityToVisibilityConverter Invert=true}, ConverterParameter='0'}"
              Content="Change date and hit Tab (change focus)"
              />
     </StackPanel>
